@@ -3,8 +3,8 @@ import { Layout } from '../components';
 
 export default function Home() {
   return (
-    <Layout>
-      Content
+    <Layout showSider={false}>
+      Post
     </Layout>
   );
 };

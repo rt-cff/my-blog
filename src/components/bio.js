@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { useLocation } from "@reach/router"
 import { Avatar, Menu, Button } from 'antd';
 import { Mail as MailIcon, GitHub as GitHubIcon } from 'react-feather';
 
@@ -37,6 +39,7 @@ const StyledDiv = styled.div`
 `
 
 export const Bio = () => {
+  const { pathname } = useLocation();
 
   return (
     <StyledDiv>
@@ -45,9 +48,13 @@ export const Bio = () => {
       <p>
         Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.
       </p>
-      <Menu>
-        <Menu.Item><a href="/">Home</a></Menu.Item>
-        <Menu.Item><a href="/about-me">About Me</a></Menu.Item>
+      <Menu defaultSelectedKeys={[pathname]}>
+        <Menu.Item key='/'>
+          <Link to="/">Home</Link>
+        </Menu.Item>
+        <Menu.Item key='/about-me'>
+          <Link to="/about-me">About Me</Link>
+        </Menu.Item>
       </Menu>
       <div className = 'footer-btns'> 
         <Button type='link' size='small' icon={<MailIcon size={20}/>} href="mailto:raymondtamtwtp@gmail.com"/>

@@ -7,6 +7,7 @@ import { Mail as MailIcon, GitHub as GitHubIcon } from 'react-feather';
 
 const StyledDiv = styled.div`
   h1 {
+    font-weight: 800;
     margin: 15px 0px;
   }
 
